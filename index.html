@@ -6,6 +6,65 @@
 		<title>Portfolio</title>
 		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 		<style>
+			* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+#html {
+    min-width: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    min-height: 1350px;
+    padding-left: 40px;
+    padding-right: 40px;
+    scroll-behavior: smooth;
+}
+
+#site {
+    min-width: 0px;
+    width: 100%;
+    display: block;
+    margin: auto;
+    background: #191919;
+    font-family: sans-serif;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+section .title {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+section .title::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+
+section .title::after {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    font-size: 20px;
+    color: crimson;
+    padding: 0 5px;
+    background: #1a1a1a;
+    transform: translateX(-50%);
+}
 		</style>
 	</head>
 	<body class="wrapper">
