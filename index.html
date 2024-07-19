@@ -330,6 +330,60 @@ section .title::after {
 .resume-button:hover {
     background-color: #0056b3;
 }
+			.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-link {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #0056b3;
+}
+
+.github::before {
+    margin-right: 5px;
+}
+
+.linkedin::before {
+    margin-right: 5px;
+}
+
+.rotate-section {
+    transition: 4s ease;
+    transform: rotateY(360deg);
+}
+
+.footer {
+    width: 60% !important;
+    height: 60% !important;
+    padding: 0 !important;
+    align-items: center;
+}
+
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.0);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.no-js #loader-wrapper {
+    display: none;
+}
 		</style>
 	</head>
 	<body class="wrapper">
