@@ -500,7 +500,55 @@ section .title::after {
         padding-left: 10px;
     }
 }
+@media screen and (max-width: 930px) {
+    .user-info {
+        margin-left: 0px;
+    }
 
+    .user-info .profile {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 1060px) {
+
+    .user-info .button,
+    .user-info .hour {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .wrapper {
+        max-width: 1200px;
+    }
+
+    .first-box {
+        flex-wrap: wrap;
+    }
+
+    .activity {
+        width: 49%;
+        max-width: none;
+    }
+
+    .first-box .cards-wrapper {
+        width: 67%;
+        max-width: none;
+        margin: 20px 0;
+    }
+
+    .first-box .cards-wrapper .item.is-active {
+        background: none;
+        color: inherit;
+    }
+
+    .first-box .account-wrapper {
+        max-width: none;
+        width: calc(33% - 20px);
+        margin: 20px 0 20px 20px;
+    }
+}
 		</style>
 	</head>
 	<body class="wrapper">
