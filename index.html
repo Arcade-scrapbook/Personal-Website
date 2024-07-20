@@ -461,6 +461,45 @@ section .title::after {
     transform: translateY(-100%);
     transition: all 0.3s 1s ease-out;
 }
+			@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-reverse {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .user-box {
+        width: 90% !important;
+    }
+}
+
+@media screen and (max-width: 720px) {
+
+    .first-box .account-wrapper,
+    .first-box .cards-wrapper {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .main-container {
+        padding-left: 10px;
+    }
+}
 
 		</style>
 	</head>
