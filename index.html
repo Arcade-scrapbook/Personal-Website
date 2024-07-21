@@ -1,194 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Portfolio</title>
-		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-		<style>
-			* {
-    margin: 0;
-    padding: 0;
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+	    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --delay: 0s;
+}
+
+* {
+    outline: none;
     box-sizing: border-box;
-
 }
 
-#html {
-    min-width: 0px;
-    margin-left: 5px;
-    margin-right: 5px;
-    min-height: 1350px;
-    padding-left: 40px;
-    padding-right: 40px;
-    scroll-behavior: smooth;
-}
-
-#site {
-    min-width: 0px;
-    width: 100%;
-    display: block;
-    margin: auto;
-    background: #191919;
-    font-family: sans-serif;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-section .title {
-    position: relative;
-    text-align: center;
-    font-size: 40px;
-    font-weight: 500;
-    margin-bottom: 0px;
-    padding-bottom: 20px;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-section .title::before {
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    width: 180px;
-    height: 3px;
-    background: #111;
-    transform: translateX(-50%);
-}
-
-section .title::after {
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    font-size: 20px;
-    color: crimson;
-    padding: 0 5px;
-    background: #1a1a1a;
-    transform: translateX(-50%);
-}
-
-.navbar {
-    margin-left: 5px;
-    margin-right: 5px;
-    list-style: none;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9;
-    background: #1a1a1a;
-    height: 90px;
-}
-
-.rnav {
-    display: flex;
-    justify-content: right;
-    padding: 0;
-}
-
-.rnav .link a {
-    font-size: 25px;
-    padding: 0 !important;
-}
-
-.link-group {
-    list-style: none;
-    display: flex;
-}
-
-.link a {
-    color: #fff;
-    opacity: 0.5;
-    text-decoration: none;
-    text-transform: capitalize;
-    padding: 10px 30px;
-    margin: 0 20px;
-    line-height: 80px;
-    transition: .5s;
-    font-size: 20px;
-}
-
-.link a:hover,
-.link.active a {
-    opacity: 1;
-}
-			.home-section {
-    width: 100%;
-    min-height: 1100px !important;
-    display: flex;
-    align-items: center;
-    /* position: relative; */
-    top: 0;
-    opacity: 0;
-    transition: 1s;
-}
-
-.hero-heading {
-    color: #fff;
-    font-size: 80px;
-    height: 90px;
-    text-transform: capitalize;
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Roboto", sans-serif;
     font-weight: 300;
+    font-style: normal;
 }
 
-.home-img {
-    position: relative;
-    top: 0;
-    right: 0 !important;
-    height: 70vh;
-    width: 40% !important;
-    /* object-fit: cover; */
-    opacity: 0.2;
+body {
+    background-color: #252954;
+    color: #9b9ca7;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(136, 136, 136, 0.1) rgba(241, 241, 241, 0);
 }
 
-.home-section {
-    /* previous styles */
-    position: fixed;
+::-webkit-scrollbar {
+    width: 10px;
+    margin-right: 10px;
 }
 
-.home-section.active,
-.project-section.active,
-.about-section.active,
-.contact-section.active {
-    /* position: relative; */
-    position: unset;
-    opacity: 1;
-    z-index: 8;
+::-webkit-scrollbar-thumb {
+    background-color: rgba(136, 136, 136, 0.1);
+    border-radius: 6px;
 }
 
-.home-section.active {
-    min-height: 1100px !important;
+::-webkit-scrollbar-track {
+    background-color: rgba(241, 241, 241, 0);
 }
-			.project-section {
+
+body::-ms-scrollbar {
+    width: 10px;
+}
+
+body::-ms-scrollbar-thumb {
+    background-color: rgba(136, 136, 136, 0.1);
+    border-radius: 6px;
+}
+
+body::-ms-scrollbar-track {
+    background-color: rgba(241, 241, 241, 0);
+}
+
+.wrapper {
+    min-width: 100%;
+    background-color: #0e0e23;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.main-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    min-height: 100vh;
-    padding: 150px 100px 100px;
-    position: fixed;
-    top: 0;
-    transition: 1s;
-    opacity: 0;
+    flex-grow: 1;
+    padding: 0px 5px 0 5px;
+    overflow: auto;
 }
 
-.project-heading {
-    font-size: 100px;
-    background: #252525;
-    text-transform: capitalize;
+.header {
+    background: radial-gradient(circle, #141834 0%, #13162f 100%);
+    box-shadow: 0 16px 12px #0e0e23;
+    width: 100%;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    font-size: 20px;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.header:before {
+    content: "";
+    width: 100%;
+    height: 25px;
+    position: absolute;
+    top: -25px;
+    left: 0;
+    background-color: #0e0e23;
+}
+
+.header-link {
+    color: #9b9ca7;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 20px 20px 25px 20px;
+    transition: 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.header-link svg {
+    width: 20px;
+    margin-right: 14px;
+}
+
+.header-link.active,
+.header-link:hover {
+    background: #11132c;
+    border-bottom: 3px solid #4255d4;
+}
+
+.logo {
+    padding: 20px 50px;
+    font-size: 30px;
+    color: #e7e8ea;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+.logo-det {
+    margin-top: 5px;
+    background: #4255d4;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 15px;
     text-align: center;
-    margin-bottom: 50px;
-    color: #1a1a1a;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-stroke: 8px transparent;
+}
+
+.user-info {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.user-info:hover .logout-button {
+    display: block;
+}
+
+.user-info svg {
+    width: 20px;
+}
+
+.user-info .profile {
+    margin: 0 20px 0 12px;
+    width: 18px;
+}
+
+.user-box {
+    margin-top: 25px;
+    margin-left: 25px;
+    display: flex;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 20px;
+}
+
+.user-box+.user-box {
+    margin-top: 20px;
+}
+
+.user-box+.user-box .cards-wrapper {
+    margin-left: 0;
+    flex-grow: 1;
+    max-width: none;
+}
+
+.user-box+.user-box .today {
+    margin-left: 30px;
+}
+
+.user-box+.user-box .cards-header {
+    padding: 20px 30px;
+    justify-content: space-between;
+}
+
+.user-box .cards-header,
+.user-box .cards-view {
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+}
+
+.user-box .cards-header svg,
+.user-box .cards-view svg {
+    width: 24px;
+}
+
+.user-box .cards-header .title,
+.user-box .cards-view .title {
+    margin: 0 16px;
+    font-size: 15px;
+    align-items: center;
+    align-content: center;
+}
+
+.user-box .cards-header-date svg,
+.user-box .cards-view-date svg {
+    width: 30px;
+}
+
+.user-box .cards-header .cards-button,
+.user-box .cards-view .cards-button {
+    background: #15193c;
+    padding: 10px 16px;
+    margin-right: 0;
+}
+
+.user-box .cards-header .cards-button svg,
+.user-box .cards-view .cards-button svg {
+    width: 16px;
+    margin: 0 2px 0 0;
+}
+
+.user-box .cards-header .date-wrapper,
+.user-box .cards-view .date-wrapper {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.user-box .cards-header .date-wrapper .title,
+.user-box .cards-view .date-wrapper .title {
+    margin: 0 16px;
+}
+
+.user-box>* {
+    -webkit-animation: top 1s var(--delay) both;
+    animation: top 1s var(--delay) both;
+}
+
+.user-box .field {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.user-box .field input {
+    margin-left: 20px;
+    border: none;
+    flex: 1;
+    width: 0 !important;
+}
+
+.user-box .field label {
+    margin-right: 20px;
+    width: 150px;
+}
+
+.user-box h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.activity {
+    max-width: none !important;
+    width: 50% !important;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.card {
+    background: radial-gradient(circle, #1a2049 0%, #13162f 100%);
+    padding: 40px 30px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    width: 90% !important;
+    height: auto !important;
+}
+
+.card .title {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.card .subtitle {
+    font-size: 13px;
+    line-height: 1.6em;
+}
+
+.cards.card {
+    border-radius: 0 0 6px 6px;
+    padding: 30px 20px;
+}
+
+.cards.card svg {
+    width: 24px;
+    margin-left: auto;
+    color: #818394;
+}
+
+.typing-container {
+    font-size: 24px;
+    color: #fff;
+}
+
+.typing-container .static-text {
+    display: inline;
+}
+
+.typing-container #typed-text,
+.typed-cursor {
+    display: inline;
+    color: crimson;
+    font-size: 1.5em;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-image {
+    width: 18vw;
+    height: 25vw;
+    border-radius: 25px;
 }
 
 .project-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 100px;
+    margin-top: 20px;
 }
 
 .project-card {
@@ -227,7 +387,8 @@ section .title::after {
     line-height: 30px;
     text-align: center;
 }
-			.project-btn-grp {
+
+.project-btn-grp {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
@@ -238,9 +399,10 @@ section .title::after {
     text-transform: capitalize;
     font-size: 18px;
     border: none;
-    background: #000;
+    background: radial-gradient(circle, #0d1120 0%, #0b0e1a 50%, #070813 100%);
     color: #fff;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .project-btn.live {
@@ -251,6 +413,7 @@ section .title::after {
 .project-card:hover .project-img {
     filter: blur(20px);
 }
+
 .project-card:hover .project-content {
     opacity: 1;
 }
@@ -292,7 +455,8 @@ section .title::after {
     color: #f9004d;
     font-size: 2rem;
 }
-			.title {
+
+.title {
     font-family: 'Poppins', sans-serif;
     color: #f9004d;
     font-size: 4rem;
@@ -330,7 +494,8 @@ section .title::after {
 .resume-button:hover {
     background-color: #0056b3;
 }
-			.social-links {
+
+.social-links {
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -384,7 +549,8 @@ section .title::after {
 .no-js #loader-wrapper {
     display: none;
 }
-			#loader {
+
+#loader {
     display: block;
     position: relative;
     left: 50%;
@@ -433,7 +599,8 @@ section .title::after {
     background: #222;
     z-index: 10;
 }
-			#loader-wrapper .loader-section.section-left {
+
+#loader-wrapper .loader-section.section-left {
     left: 0;
 }
 
@@ -461,7 +628,8 @@ section .title::after {
     transform: translateY(-100%);
     transition: all 0.3s 1s ease-out;
 }
-			@keyframes spin {
+
+@keyframes spin {
     0% {
         transform: rotate(0deg);
     }
@@ -500,6 +668,7 @@ section .title::after {
         padding-left: 10px;
     }
 }
+
 @media screen and (max-width: 930px) {
     .user-info {
         margin-left: 0px;
@@ -549,172 +718,193 @@ section .title::after {
         margin: 20px 0 20px 20px;
     }
 }
-		</style>
-	</head>
-	<body class="wrapper">
-		<div id="loader-wrapper">
-			<div id="loader"></div>
-			<div class="loader-section section-left"></div>
-			<div class="loader-section section-right"></div>
-		</div>
-		<div class="main-container" id="content">
-			<div class="header">
-				<div class="logo">Tejas</div>
-				<div>
-					<a class="header-link" href="#about">About</a>
-					<a class="header-link" href="#project">Projects</a>
-					<a class="header-link" href="#skill">Skills</a>
-					<a class="header-link" href="#know">Know more</a>
-					<a class="header-link" href="#contact">Contact Me</a>
-				</div>
-			</div>
-			<div class="user-box section activity card about" id="about">
-				<div class="content-wrapper">
-					<div class="text-content">
-						<div class="typing-container">
-							<h1 class="static-text">Hello, I Am Tejas <br>I am a </h1>
-							<h2 class="static-text" id="typed-text"></h2>
-						</div>
-						<p>I'm a passionate web developer with a strong background in front-end development. I love creating engaging and user-friendly websites that leave a lasting impression. With expertise in HTML, CSS, JavaScript, and various web frameworks, I strive to deliver high-quality solutions that meet client needs and exceed expectations.</p>
-						<p>Aside from coding, I enjoy traveling, photography, and spending time with my family.</p>
-					</div>
-					<img src="img/tejas.jpg" alt="Tejas" class="profile-image" />
-				</div>
-			</div>
-			<div class="user-box section activity card project-section" id="project">
-				<h1>Projects</h1>
-				<div class="project-container">
-					<div class="project-card">
-						<img src="img/project-1.png" class="project-img" alt="Project 1">
-						<div class="project-content">
-							<h2 class="project-title">Project 01</h2>
-							<p class="project-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit vitae delectus cumque repudiandae aliquam optio accusamus natus nobis! Nam, sunt?</p>
-							<div class="project-btn-grp">
-								<button class="project-btn github">GitHub Repo</button>
-								<button class="project-btn live">See Live</button>
-							</div>
-						</div>
-					</div>
-					<div class="project-card">
-						<img src="img/project-2.png" class="project-img" alt="Project 2">
-						<div class="project-content">
-							<h2 class="project-title">Project 02</h2>
-							<p class="project-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit vitae delectus cumque repudiandae aliquam optio accusamus natus nobis! Nam, sunt?</p>
-							<div class="project-btn-grp">
-								<button class="project-btn github">GitHub Repo</button>
-								<button class="project-btn live">See Live</button>
-							</div>
-						</div>
-					</div>
-					<div class="project-card">
-						<img src="img/project-3.png" class="project-img" alt="Project 3">
-						<div class="project-content">
-							<h2 class="project-title">Project 03</h2>
-							<p class="project-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit vitae delectus cumque repudiandae aliquam optio accusamus natus nobis! Nam, sunt?</p>
-							<div class="project-btn-grp">
-								<button class="project-btn github">GitHub Repo</button>
-								<button class="project-btn live">See Live</button>
-							</div>
-						</div>
-					</div>
-					<div class="project-card">
-						<img src="img/project-4.png" class="project-img" alt="Project 4">
-						<div class="project-content">
-							<h2 class="project-title">Project 04</h2>
-							<p class="project-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit vitae delectus cumque repudiandae aliquam optio accusamus natus nobis! Nam, sunt?</p>
-							<div class="project-btn-grp">
-								<button class="project-btn github">GitHub Repo</button>
-								<button class="project-btn live">See Live</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="user-box first-box section activity card" id="skill">
-				<h1>Skills</h1>
-				<div class="s_con">
-					<div class="parent-skill">
-						<div class="skill">
-							<div class="progress" data-progress="100">
-								<span class="progress-number">0%</span>
-							</div>
-						</div>
-						<span class="title">HTML</span>
-					</div>
-					<div class="parent-skill">
-						<div class="skill">
-							<div class="progress" data-progress="80">
-								<span class="progress-number">0%</span>
-							</div>
-						</div>
-						<span class="title">JS</span>
-					</div>
-					<div class="parent-skill">
-						<div class="skill">
-							<div class="progress" data-progress="80">
-								<span class="progress-number">0%</span>
-							</div>
-						</div>
-						<span class="title">PHP</span>
-					</div>
-					<div class="parent-skill">
-						<div class="skill">
-							<div class="progress" data-progress="70">
-								<span class="progress-number">0%</span>
-							</div>
-						</div>
-						<span class="title">CSS</span>
-					</div>
-				</div>
-			</div>
-			<div class="user-box first-box section activity card" id="know">
-				<h1>Know More about me</h1>
-				<div class="content-wrapper">
-					<div>
-						<p class="p">I am a dynamic and enthusiastic individual with a rich blend of leadership, technical
-							expertise, and a passion for continuous learning. My journey includes organizing high-energy
-							hackathons with CodeDay, where I thrived in managing logistics, solving real-time challenges,
-							and inspiring over 250 participants. As Fire House Captain at Wisdom High International School,
-							I sharpened my crisis management and teamwork skills, ensuring safety and unity. Academically, I
-							am pursuing a Diploma in Computer Engineering at Government Polytechnic Pune, complemented by a
-							suite of certifications in programming, communication, and leadership. My achievements also
-							extend to sports, having led my team to victory in the district-level table tennis competition.
-							Eager to innovate and inspire, I bring dedication and a proactive mindset to every endeavor.
-						</p>
-						<a href="Tejas_Patil_Resume.pdf" download class="resume-button">Download My Resume</a>
-					</div>
-					<div>
-						<img src="img/tejas.jpg" alt="Tejas" class="profile-image" />
-						<div class="social-links">
-							<a href="https://github.com/Tejas2305" target="_blank" class="social-link github">GitHub</a>
-							<a href="https://www.linkedin.com/in/tejas-patil23" target="_blank"
-								class="social-link linkedin">LinkedIn</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<contact id="Contact">
-    <section class="contact-section active" style="height: auto;">
-        <form class="contact-form" action="file.php" method="get">
-            <input type="text" name="name" id="name" autocomplete="off" placeholder="name">
-            <input type="text" name="email" id="email" autocomplete="off" placeholder="email">
-            <textarea name="msg" id="msg" placeholder="message" autocomplete="off"></textarea>
-            <button type="submit" class="form-submit-btn">Contact / Hire Me</button>
-        </form>
-        <!-- map -->
-        <div class="map">
-            <iframe src="https://bit.ly/3Ml9h29" width="600" height="450" style="border:0;" allowfullscreen=""></iframe>
-        </div>
-    </section>
+    </style>
+</head>
 
-    </contact>
-		 <div class="user-box first-box activity card footer">
+<body class="wrapper">
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    <div class="main-container" id="content">
+        <div class="header">
+
+            <div class="logo">Tejas</div>
+            <a class="header-link" href="#about">About</a>
+            <a class="header-link" href="#project">Projects</a>
+            <a class="header-link" href="#skill">Skills</a>
+            <a class="header-link" href="#know">Know more</a>
+            <a class="header-link" href="#contact">Contact Me</a>
+        </div>
+
+
+        <div class="user-box first-box section activity card about" id="about">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <div class="typing-container">
+
+                        <h1 class="static-text">Hello, I Am Tejas <br>I am a </h1>
+                        <h2 class="static-text" id="typed-text"></h2>
+                    </div>
+                    <p>I'm a passionate web developer with a strong background in front-end development. I love creating
+                        engaging and user-friendly websites that leave a lasting impression. With expertise in HTML,
+                        CSS, JavaScript, and various web frameworks, I strive to deliver high-quality solutions that
+                        meet client needs and exceed expectations.</p>
+                    <p>Aside from coding, I enjoy traveling, photography, and spending time with my family.</p>
+                </div>
+                <img src="img/tejas.jpg" alt="Tejas" class="profile-image" />
+            </div>
+        </div>
+
+
+        <div class="user-box first-box section activity card project-section" id="project">
+            <h1>Projects</h1>
+
+            <div class="project-container">
+                <div class="project-card">
+                    <img src="img/project-1.png" class="project-img" alt="">
+                    <div class="project-content">
+                        <h1 class="project-title">project 01</h1>
+                        <p class="project-info"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit vitae
+                            delectus cumque repudiandae aliquam optio accusamus natus nobis! Nam, sunt? </p>
+                        <div class="project-btn-grp">
+                            <button class="project-btn github">github repo</button>
+                            <button class="project-btn live">see live</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/project-2.png" class="project-img" alt="">
+                    <div class="project-content">
+                        <h1 class="project-title">project 02</h1>
+                        <p class="project-info"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit vitae
+                            delectus cumque repudiandae aliquam optio accusamus natus nobis! Nam, sunt? </p>
+                        <div class="project-btn-grp">
+                            <button class="project-btn github">github repo</button>
+                            <button class="project-btn live">see live</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/project-3.png" class="project-img" alt="">
+                    <div class="project-content">
+                        <h1 class="project-title">project 03</h1>
+                        <p class="project-info"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit vitae
+                            delectus cumque repudiandae aliquam optio accusamus natus nobis! Nam, sunt? </p>
+                        <div class="project-btn-grp">
+                            <button class="project-btn github">github repo</button>
+                            <button class="project-btn live">see live</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/project-4.png" class="project-img" alt="">
+                    <div class="project-content">
+                        <h1 class="project-title">project 04</h1>
+                        <p class="project-info"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit vitae
+                            delectus cumque repudiandae aliquam optio accusamus natus nobis! Nam, sunt? </p>
+                        <div class="project-btn-grp">
+                            <button class="project-btn github">github repo</button>
+                            <button class="project-btn live">see live</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="user-box first-box section activity card" id="skill">
+            <h1>Skills</h1>
+
+            <div class="s_con">
+                <div class="parent-skill">
+                    <div class="skill">
+                        <div class="progress" data-progress="100">
+                            <span class="progress-number">0%</span>
+                        </div>
+                    </div>
+                    <span class="title">HTML</span>
+                </div>
+                <div class="parent-skill">
+                    <div class="skill">
+                        <div class="progress" data-progress="80">
+                            <span class="progress-number">0%</span>
+                        </div>
+                    </div>
+                    <span class="title">JS</span>
+                </div>
+                <div class="parent-skill">
+                    <div class="skill">
+                        <div class="progress" data-progress="80">
+                            <span class="progress-number">0%</span>
+                        </div>
+                    </div>
+                    <span class="title">PHP</span>
+                </div>
+                <div class="parent-skill">
+                    <div class="skill">
+                        <div class="progress" data-progress="70">
+                            <span class="progress-number">0%</span>
+                        </div>
+                    </div>
+                    <span class="title">CSS</span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="user-box first-box section activity card" id="know">
+            <h1>Know More about me</h1>
+            <div class="content-wrapper">
+                <div>
+                    <p class="p">I am a dynamic and enthusiastic individual with a rich blend of leadership, technical
+                        expertise, and a passion for continuous learning. My journey includes organizing high-energy
+                        hackathons with CodeDay, where I thrived in managing logistics, solving real-time challenges,
+                        and inspiring over 250 participants. As Fire House Captain at Wisdom High International School,
+                        I sharpened my crisis management and teamwork skills, ensuring safety and unity. Academically, I
+                        am pursuing a Diploma in Computer Engineering at Government Polytechnic Pune, complemented by a
+                        suite of certifications in programming, communication, and leadership. My achievements also
+                        extend to sports, having led my team to victory in the district-level table tennis competition.
+                        Eager to innovate and inspire, I bring dedication and a proactive mindset to every endeavor.</p>
+                    <a href="Tejas_Patil_Resume.pdf" download class="resume-button">Download My Resume</a>
+                </div>
+                <div>
+                    <img src="img/tejas.jpg" alt="Tejas" class="profile-image" />
+
+                    <div class="social-links">
+                        <a href="https://github.com/Tejas2305" target="_blank" class="social-link github">GitHub</a>
+                        <a href="https://www.linkedin.com/in/tejas-patil23" target="_blank"
+                            class="social-link linkedin">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="user-box first-box activity card section" id="contact">
+            <h1>Contact Me</h1>
+
+            <iframe webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" scrolling="no"
+                src="https://forms.visme.co/formsPlayer/_embed/rx9w4xxo-contact-us?embedIframeId=1" title="Contact us"
+                loading="lazy" class="vismeForms"
+                style="border: none; max-width: 100%; display: flex; justify-content: center; align-items: center; min-height: 507.808px;"></iframe>
+            <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
+        </div>
+
+
+        <div class="user-box first-box activity card footer">
             <h4>Created By Tejas Patil | <strong style="font-size: 25px; font-weight: 1000;">©</strong> 2024 All rights
                 reserved.</h4>
         </div>
-		<script>
-document.addEventListener('DOMContentLoaded', function () {
+    </div>
+
+
+    <script>
+	    document.addEventListener('DOMContentLoaded', function () {
 
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -788,6 +978,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.classList.add('loaded');
     }, 1000);
 });
-		</script>
-	</body>
+    </script>
+</body>
+
 </html>
