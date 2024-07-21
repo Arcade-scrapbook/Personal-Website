@@ -713,6 +713,34 @@ section .title::after {
             <h4>Created By Tejas Patil | <strong style="font-size: 25px; font-weight: 1000;">©</strong> 2024 All rights
                 reserved.</h4>
         </div>
-		<script></script>
+		<script>
+			if (window.screen.width > 985) {
+    $(document).ready(function () {
+
+        $('.carousel').owlCarousel({
+            margin: 20,
+            loop: true,
+            autoplay: true,
+            autoplayTimeOut: 2000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                600: {
+                    items: 2,
+                    nav: false
+                },
+                1000: {
+                    items: 3,
+                    nav: false
+                }
+            }
+        });
+    });
+
+}
+		</script>
 	</body>
 </html>
