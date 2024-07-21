@@ -747,47 +747,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }, 20);
     }
-
-    const headerLinks = document.querySelectorAll('.header-link');
-    headerLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            headerLinks.forEach(link => {
-                link.classList.remove('active');
-            });
-            link.classList.add('active');
-        });
-    });
-
-    const sections = document.querySelectorAll('.section');
-    const navLinks = document.querySelectorAll('.header-link');
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.5
-    };
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').substring(1) === entry.target.id) {
-                        link.classList.add('active');
-                        if (link.getAttribute('href').substring(1) === "skill") {
-                            progressBarAndCountNumber();
-                        }
-                    }
-                });
-            }
-        });
-    }, observerOptions);
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-
-    setTimeout(function () {
-        document.body.classList.add('loaded');
-    }, 1000);
-});
 		</script>
 	</body>
 </html>
